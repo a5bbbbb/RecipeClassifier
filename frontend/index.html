@@ -31,7 +31,7 @@
                         <div class="flex space-x-4">
                             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
                             <a href="#" class="rounded-md px-3 py-2 text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-green-500 mb-2">Culinary Classifier</a>
-                            <a href="#" class="rounded-md px-3 py-2 text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-green-500 mb-2">Code</a>
+                            <a href="https://github.com/a5bbbbb/RecipeClassifier" class="rounded-md px-3 py-2 text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-green-500 mb-2">Code</a>
                         </div>
                     </div>
                 </div>
@@ -77,8 +77,7 @@
         const loadingSpinner = document.getElementById('loading-spinner');
         const errorMessage = document.getElementById('error-message');
 
-        const API_KEY = "";
-        const API_URL = "http://localhost:5000/predict";
+        const API_URL = "/predict";
         const MAX_RETRIES = 5;
 
         submitButton.addEventListener('click', handleSubmit);

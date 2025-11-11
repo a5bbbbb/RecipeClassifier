@@ -19,11 +19,8 @@ try:
     mlb = joblib.load("mlb.pkl")
 
     print("Models loaded successfully.")
-
     
-    nltk.download('stopwords', quiet=True)
-    nltk.download('wordnet', quiet=True)
-    nltk.download('omw-1.4', quiet=True)
+    nltk.data.path.append('./nltk_data')
 
     stop_words = set(stopwords.words('english'))
     lemmatizer = WordNetLemmatizer()
