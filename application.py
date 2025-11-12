@@ -37,11 +37,11 @@ except FileNotFoundError as e:
     exit()
 
 
-@app.route("/")
+@application.route("/")
 def hello_world():
     return homepage
 
-@app.route('/predict', methods=['POST'])
+@application.route('/predict', methods=['POST'])
 def predict_tags():
 
     data = request.get_json()
