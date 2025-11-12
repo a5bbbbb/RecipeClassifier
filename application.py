@@ -6,7 +6,7 @@ from nltk.stem import WordNetLemmatizer
 import joblib
 import json
 import re
-app = Flask(__name__)
+application = Flask(__name__)
 
 try:
     with open("./frontend/index.html", "r") as f: 
@@ -67,4 +67,4 @@ def predict_tags():
         return json.dumps({"error": "An error occurred during prediction."}), 500
 
 if __name__ == '__main__':
-    app.run(port=80)
+    application.run(port=8000)
