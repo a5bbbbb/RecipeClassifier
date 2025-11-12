@@ -66,7 +66,5 @@ def predict_tags():
         print(f"Error during prediction: {e}")
         return json.dumps({"error": "An error occurred during prediction."}), 500
 
-# 4. Run the Flask app
 if __name__ == '__main__':
-    # Setting debug=True is useful for development
-    app.run(debug=True)
+    app.run(port=80)
