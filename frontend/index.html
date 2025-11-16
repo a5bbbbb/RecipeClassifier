@@ -107,7 +107,7 @@
         }
 
         /**
-         * Calls our API with 
+         * Calls our API 
          * @param {string} text - The user's recipe text
          * @returns {Promise<string[]>} - A promise that resolves to an array of tags
          */
@@ -139,7 +139,7 @@
                 } catch (error) {
                     attempt++;
                     if (attempt >= MAX_RETRIES) {
-                        throw error; // Re-throw last error
+                        throw error; 
                     }
                     const delay = 500;
                     await new Promise(resolve => setTimeout(resolve, delay));
@@ -158,17 +158,15 @@
                 return;
             }
             
-            tagContainer.innerHTML = ''; // Clear previous tags
+            tagContainer.innerHTML = ''; 
             tags.forEach(tag => {
                 const tagElement = document.createElement('span');
                 tagElement.className = 'flex items-center bg-gray-100 text-gray-700 text-sm font-medium px-4 py-2 rounded-full shadow-sm border border-gray-200 transition-transform duration-150 hover:scale-105 hover:shadow-md';
                 
-                // Add a small decorative dot
                 const dot = document.createElement('span');
                 dot.className = 'mr-2 h-2 w-2 rounded-full bg-blue-400';
                 tagElement.appendChild(dot);
                 
-                // Add the tag text
                 const text = document.createTextNode(tag);
                 tagElement.appendChild(text);
                 

@@ -6,7 +6,11 @@ from nltk.stem import WordNetLemmatizer
 import joblib
 import json
 import re
+from werkzeug.middleware.proxy_fix import ProxyFix
 application = Flask(__name__)
+application.wsgi_app = ProxyFix(
+    application.wsgi_app, x_for=1, x_proto=1, x_host=1, x_prefix=1
+)
 
 try:
     with open("./frontend/index.html", "r") as f: 
@@ -67,4 +71,4 @@ def predict_tags():
         return json.dumps({"error": "An error occurred during prediction."}), 500
 
 if __name__ == '__main__':
-    application.run(port=8000)
+    application.run(port=80)
